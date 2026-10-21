@@ -1,0 +1,133 @@
+role_family,recalculated_seniority,region,total_postings,regional_avg_midpoint_gbp,uk_benchmark_midpoint_gbp,benchmark_salary_gap_gbp,avg_role_volatility_cv
+Machine Learning Engineer,Lead / Principal,Northern Ireland,76,98868.43,117903.13,-19034.7,0.1472
+Cloud Platform Engineer,Lead / Principal,Northern Ireland,53,93264.82,110918.28,-17653.46,0.1376
+Data Engineer,Lead / Principal,Northern Ireland,119,88852.96,105550.69,-16697.73,0.1482
+Machine Learning Engineer,Senior,Northern Ireland,147,82429.87,98570.86,-16140.98,0.144
+Data Scientist,Lead / Principal,Northern Ireland,75,85888.17,101909.74,-16021.57,0.1386
+Cloud Platform Engineer,Senior,Northern Ireland,99,77475.04,93290.39,-15815.35,0.1442
+Analytics Engineer,Lead / Principal,Northern Ireland,58,84048.27,99797.19,-15748.93,0.1457
+Analytics Engineer,Lead / Principal,Wales,66,84135.12,99797.19,-15662.07,0.1457
+Data Engineer,Lead / Principal,Wales,113,89993.26,105550.69,-15557.44,0.1482
+Machine Learning Engineer,Senior,Wales,129,83720.69,98570.86,-14850.16,0.144
+Backend Software Engineer,Senior,Northern Ireland,96,70160.49,84529.7,-14369.21,0.1413
+Cloud Platform Engineer,Senior,Wales,97,79210.57,93290.39,-14079.82,0.1442
+Data Scientist,Senior,Northern Ireland,152,71545.76,85497.32,-13951.56,0.1432
+Data Engineer,Senior,Northern Ireland,239,74765.49,88447.95,-13682.46,0.1429
+Data Scientist,Senior,Wales,146,71957.2,85497.32,-13540.13,0.1432
+Data Engineer,Senior,Wales,226,75208.56,88447.95,-13239.39,0.1429
+Machine Learning Engineer,Mid-Level,Northern Ireland,158,64846.37,77948.19,-13101.82,0.1433
+Data Engineer,Lead / Principal,Yorkshire & Humber,168,92502.3,105550.69,-13048.4,0.1482
+BI Developer,Lead / Principal,Northern Ireland,56,67328.8,80360.96,-13032.15,0.1411
+Data Scientist,Lead / Principal,Wales,63,88898.88,101909.74,-13010.86,0.1386
+Machine Learning Engineer,Lead / Principal,Yorkshire & Humber,85,104987.83,117903.13,-12915.3,0.1472
+Financial Risk Analyst,Senior,Northern Ireland,60,62799.88,75572.36,-12772.49,0.1425
+Analytics Engineer,Senior,Wales,110,70644.44,83098.71,-12454.27,0.139
+Analytics Engineer,Lead / Principal,Yorkshire & Humber,71,87469.08,99797.19,-12328.11,0.1457
+Analytics Engineer,Senior,Northern Ireland,113,70898.12,83098.71,-12200.59,0.139
+Financial Risk Analyst,Senior,Wales,73,63441.75,75572.36,-12130.62,0.1425
+Data Scientist,Lead / Principal,Yorkshire & Humber,108,90192.62,101909.74,-11717.13,0.1386
+Data Governance Specialist,Senior,Northern Ireland,66,60690.2,72404.79,-11714.58,0.1425
+Machine Learning Engineer,Mid-Level,Wales,151,66322.48,77948.19,-11625.71,0.1433
+Backend Software Engineer,Senior,Wales,119,72940.02,84529.7,-11589.68,0.1413
+Data Analyst,Lead / Principal,Northern Ireland,105,63016.73,74428.4,-11411.67,0.1459
+Cloud Platform Engineer,Mid-Level,Wales,144,62287.86,73618.02,-11330.16,0.1417
+Data Analyst,Lead / Principal,Wales,108,63203.01,74428.4,-11225.39,0.1459
+Cloud Platform Engineer,Mid-Level,Northern Ireland,130,62426.15,73618.02,-11191.87,0.1417
+BI Developer,Senior,Northern Ireland,128,56396.95,67561.54,-11164.59,0.1447
+Data Engineer,Lead / Principal,West Midlands,207,94416.9,105550.69,-11133.79,0.1482
+Backend Software Engineer,Lead / Principal,West Midlands,90,89741.98,100827.86,-11085.88,0.144
+Backend Software Engineer,Lead / Principal,Yorkshire & Humber,77,89753.08,100827.86,-11074.78,0.144
+Data Engineer,Mid-Level,Northern Ireland,301,58817.8,69773.17,-10955.37,0.1416
+Backend Software Engineer,Mid-Level,Northern Ireland,117,55903.15,66799.68,-10896.54,0.1444
+Machine Learning Engineer,Senior,Yorkshire & Humber,180,87679.66,98570.86,-10891.2,0.144
+Data Governance Specialist,Senior,Wales,57,61582.32,72404.79,-10822.47,0.1425
+Data Scientist,Mid-Level,Northern Ireland,185,57099.89,67800.92,-10701.03,0.1429
+Data Scientist,Lead / Principal,West Midlands,131,91462.48,101909.74,-10447.26,0.1386
+Data Scientist,Mid-Level,Wales,193,57374.91,67800.92,-10426.01,0.1429
+BI Developer,Senior,Wales,148,57157.37,67561.54,-10404.17,0.1447
+Analytics Engineer,Mid-Level,Northern Ireland,173,55277.56,65670.0,-10392.44,0.1457
+Cloud Platform Engineer,Senior,Yorkshire & Humber,189,82910.14,93290.39,-10380.25,0.1442
+Data Engineer,Senior,Yorkshire & Humber,346,78124.5,88447.95,-10323.46,0.1429
+Machine Learning Engineer,Senior,West Midlands,256,88323.77,98570.86,-10247.09,0.144
+Analytics Engineer,Lead / Principal,West Midlands,100,89559.51,99797.19,-10237.69,0.1457
+Data Engineer,Mid-Level,Wales,293,59587.26,69773.17,-10185.91,0.1416
+Data Analyst,Senior,Northern Ireland,227,52389.77,62415.52,-10025.75,0.1428
+Machine Learning Engineer,Junior,Wales,93,49044.73,59070.41,-10025.69,0.1437
+Backend Software Engineer,Mid-Level,Wales,127,56794.76,66799.68,-10004.92,0.1444
+Financial Risk Analyst,Mid-Level,Northern Ireland,97,49532.6,59469.74,-9937.15,0.1435
+Data Governance Specialist,Mid-Level,Northern Ireland,59,47405.21,57274.98,-9869.76,0.1424
+Data Scientist,Senior,Yorkshire & Humber,225,75647.96,85497.32,-9849.36,0.1432
+Backend Software Engineer,Senior,Yorkshire & Humber,178,74847.73,84529.7,-9681.97,0.1413
+Data Analyst,Senior,Wales,224,52780.95,62415.52,-9634.57,0.1428
+Analytics Engineer,Mid-Level,Wales,146,56088.68,65670.0,-9581.32,0.1457
+Data Governance Specialist,Lead / Principal,Yorkshire & Humber,52,76750.31,86264.51,-9514.2,0.144
+Data Engineer,Senior,West Midlands,469,79028.31,88447.95,-9419.64,0.1429
+BI Developer,Mid-Level,Northern Ireland,170,44243.56,53348.38,-9104.82,0.1448
+Machine Learning Engineer,Junior,Northern Ireland,82,49975.19,59070.41,-9095.22,0.1437
+BI Developer,Lead / Principal,Yorkshire & Humber,102,71286.79,80360.96,-9074.16,0.1411
+Backend Software Engineer,Senior,West Midlands,208,75466.58,84529.7,-9063.12,0.1413
+Financial Risk Analyst,Lead / Principal,Yorkshire & Humber,53,80831.47,89874.0,-9042.53,0.1453
+Financial Risk Analyst,Senior,Yorkshire & Humber,109,66560.62,75572.36,-9011.74,0.1425
+Data Scientist,Senior,West Midlands,283,76672.57,85497.32,-8824.75,0.1432
+Cloud Platform Engineer,Junior,Northern Ireland,88,47169.82,55985.98,-8816.16,0.1427
+Analytics Engineer,Senior,Yorkshire & Humber,210,74330.79,83098.71,-8767.92,0.139
+Financial Risk Analyst,Mid-Level,Wales,91,50767.68,59469.74,-8702.07,0.1435
+Analytics Engineer,Senior,West Midlands,226,74562.56,83098.71,-8536.15,0.139
+Cloud Platform Engineer,Mid-Level,Yorkshire & Humber,253,65081.95,73618.02,-8536.06,0.1417
+Machine Learning Engineer,Mid-Level,Yorkshire & Humber,240,69478.41,77948.19,-8469.78,0.1433
+Data Engineer,Junior,Northern Ireland,189,44241.07,52608.21,-8367.14,0.1428
+Machine Learning Engineer,Mid-Level,West Midlands,270,69670.88,77948.19,-8277.31,0.1433
+Data Analyst,Mid-Level,Northern Ireland,263,41127.53,49353.1,-8225.58,0.1436
+Data Scientist,Junior,Northern Ireland,96,42902.77,51013.71,-8110.94,0.142
+Analytics Engineer,Junior,Northern Ireland,75,41478.33,49582.99,-8104.66,0.1419
+Backend Software Engineer,Junior,Northern Ireland,72,42549.87,50571.57,-8021.71,0.1452
+Backend Software Engineer,Junior,Wales,95,42550.91,50571.57,-8020.67,0.1452
+Data Governance Specialist,Mid-Level,Wales,76,49281.48,57274.98,-7993.5,0.1424
+Data Analyst,Lead / Principal,Yorkshire & Humber,172,66436.9,74428.4,-7991.5,0.1459
+Data Engineer,Junior,Wales,175,44639.43,52608.21,-7968.78,0.1428
+Cloud Platform Engineer,Junior,Wales,91,48018.24,55985.98,-7967.74,0.1427
+Data Engineer,Mid-Level,Yorkshire & Humber,452,61888.33,69773.17,-7884.84,0.1416
+Data Analyst,Lead / Principal,West Midlands,207,66590.46,74428.4,-7837.93,0.1459
+BI Developer,Mid-Level,Wales,167,45551.6,53348.38,-7796.78,0.1448
+Data Governance Specialist,Senior,Yorkshire & Humber,69,64773.28,72404.79,-7631.51,0.1425
+Data Scientist,Junior,Wales,122,43398.41,51013.71,-7615.3,0.142
+BI Developer,Senior,Yorkshire & Humber,207,59950.49,67561.54,-7611.05,0.1447
+Financial Risk Analyst,Junior,Wales,57,37553.9,45162.69,-7608.79,0.1437
+Backend Software Engineer,Mid-Level,West Midlands,251,59253.51,66799.68,-7546.18,0.1444
+Analytics Engineer,Mid-Level,West Midlands,262,58143.74,65670.0,-7526.27,0.1457
+Financial Risk Analyst,Junior,Northern Ireland,56,37653.51,45162.69,-7509.18,0.1437
+Analytics Engineer,Junior,Wales,91,42089.68,49582.99,-7493.31,0.1419
+Backend Software Engineer,Mid-Level,Yorkshire & Humber,234,59321.36,66799.68,-7478.32,0.1444
+Data Analyst,Mid-Level,Wales,301,41906.28,49353.1,-7446.83,0.1436
+Data Scientist,Mid-Level,Yorkshire & Humber,291,60455.87,67800.92,-7345.06,0.1429
+Analytics Engineer,Mid-Level,Yorkshire & Humber,253,58347.15,65670.0,-7322.85,0.1457
+Data Scientist,Mid-Level,West Midlands,371,60696.73,67800.92,-7104.19,0.1429
+Data Analyst,Senior,Yorkshire & Humber,347,55423.51,62415.52,-6992.01,0.1428
+BI Developer,Senior,West Midlands,242,60743.09,67561.54,-6818.45,0.1447
+BI Developer,Junior,Northern Ireland,101,33599.61,40328.61,-6729.0,0.1421
+Financial Risk Analyst,Mid-Level,Yorkshire & Humber,149,52893.04,59469.74,-6576.7,0.1435
+Data Analyst,Senior,West Midlands,465,56155.79,62415.52,-6259.73,0.1428
+Cloud Platform Engineer,Junior,Yorkshire & Humber,126,49737.15,55985.98,-6248.83,0.1427
+BI Developer,Junior,Wales,83,34095.93,40328.61,-6232.69,0.1421
+Data Governance Specialist,Mid-Level,West Midlands,141,51072.38,57274.98,-6202.59,0.1424
+Financial Risk Analyst,Mid-Level,West Midlands,216,53305.58,59469.74,-6164.17,0.1435
+Data Analyst,Junior,Northern Ireland,180,31103.42,37266.59,-6163.17,0.1444
+BI Developer,Mid-Level,Yorkshire & Humber,280,47229.63,53348.38,-6118.75,0.1448
+Machine Learning Engineer,Junior,West Midlands,153,52961.87,59070.41,-6108.54,0.1437
+Machine Learning Engineer,Junior,Yorkshire & Humber,139,52998.02,59070.41,-6072.39,0.1437
+Cloud Platform Engineer,Junior,West Midlands,174,49982.43,55985.98,-6003.55,0.1427
+Data Engineer,Junior,Yorkshire & Humber,290,46720.86,52608.21,-5887.35,0.1428
+Analytics Engineer,Junior,Yorkshire & Humber,127,43823.22,49582.99,-5759.77,0.1419
+Backend Software Engineer,Junior,West Midlands,149,44910.39,50571.57,-5661.19,0.1452
+Data Engineer,Junior,West Midlands,363,47014.77,52608.21,-5593.44,0.1428
+Data Analyst,Junior,Wales,170,31715.55,37266.59,-5551.04,0.1444
+Backend Software Engineer,Junior,Yorkshire & Humber,126,45072.33,50571.57,-5499.25,0.1452
+Data Scientist,Junior,Yorkshire & Humber,191,45528.71,51013.71,-5485.0,0.142
+BI Developer,Mid-Level,West Midlands,307,47896.23,53348.38,-5452.16,0.1448
+Data Analyst,Mid-Level,Yorkshire & Humber,407,44067.87,49353.1,-5285.24,0.1436
+Data Governance Specialist,Junior,West Midlands,79,38356.47,43635.54,-5279.07,0.1456
+Financial Risk Analyst,Junior,Yorkshire & Humber,88,40155.84,45162.69,-5006.85,0.1437
+BI Developer,Junior,Yorkshire & Humber,154,35954.69,40328.61,-4373.92,0.1421
+Data Analyst,Junior,Yorkshire & Humber,270,32915.23,37266.59,-4351.36,0.1444
+BI Developer,Junior,West Midlands,200,36124.54,40328.61,-4204.08,0.1421
+Data Analyst,Junior,West Midlands,356,33340.19,37266.59,-3926.4,0.1444

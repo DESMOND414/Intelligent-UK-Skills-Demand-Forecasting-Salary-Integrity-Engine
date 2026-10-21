@@ -1,0 +1,4 @@
+quarantine_reason,quarantined_rows
+Corrupted/Unparseable Salary or Negative Experience Years,1320
+Impossible Salary Band: salary_min_gbp > salary_max_gbp,3650
+Impossible Timeline: closing_date < posting_date,3450

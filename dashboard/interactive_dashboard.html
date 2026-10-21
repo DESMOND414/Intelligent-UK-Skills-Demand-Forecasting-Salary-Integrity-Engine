@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Intelligent UK Skills Demand Forecasting & Salary Integrity Engine — Interactive Dashboard</title>
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<style>
+  :root {
+    --bg: #0c1322; --panel: #141f36; --border: #233252;
+    --text: #f8fafc; --muted: #94a3b8;
+    --blue: #38bdf8; --green: #10b981; --gold: #fbbf24; --red: #f43f5e;
+  }
+  * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+  body { margin: 0; padding: 24px; background: var(--bg); color: var(--text); }
+  h1 { margin: 0 0 6px; font-size: 22px; color: var(--blue); }
+  .sub { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
+  .kpi { background: var(--panel); border: 1px solid var(--border); border-left: 4px solid var(--blue); padding: 16px; border-radius: 6px; }
+  .kpi h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; }
+  .kpi .val { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+  .kpi .note { font-size: 12px; color: var(--muted); }
+  .smart-box { display: grid; grid-template-columns: 1.5fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .panel { background: var(--panel); border: 1px solid var(--border); padding: 18px; border-radius: 6px; }
+  .panel h3 { margin: 0 0 10px; font-size: 15px; color: var(--gold); }
+  .narrative { font-size: 14px; line-height: 1.6; color: var(--text); }
+  .slider-row { display: flex; align-items: center; gap: 14px; margin-top: 12px; }
+  input[type=range] { flex: 1; accent-color: var(--green); cursor: pointer; }
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .alert-pill { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 700; background: rgba(244,63,94,0.18); color: var(--red); border: 1px solid var(--red); margin-top: 8px; }
+</style>
+</head>
+<body>
+  <h1>Intelligent UK Skills Demand Forecasting &amp; Salary Integrity Engine</h1>
+  <div class="sub">Automated Python &rarr; MySQL &rarr; Power BI Pipeline | 100,000 Raw Postings &rarr; 91,580 Verified | 8,420 Quarantined</div>
+
+  <div class="kpi-grid">
+    <div class="kpi" style="border-left-color: var(--blue)">
+      <h4>Verified Clean Postings</h4>
+      <div class="val" style="color: var(--blue)">91,580</div>
+      <div class="note">5 mixed date formats &amp; '&pound;' strings standardised</div>
+    </div>
+    <div class="kpi" style="border-left-color: var(--red)">
+      <h4>Quarantined Anomalies</h4>
+      <div class="val" style="color: var(--red)">8,420</div>
+      <div class="note">Min &gt; Max salary &amp; Closing &lt; Posting date isolated</div>
+    </div>
+    <div class="kpi" style="border-left-color: var(--gold)">
+      <h4>False-Seniority Flagged</h4>
+      <div class="val" style="color: var(--gold)">8,326 (9.09%)</div>
+      <div class="note">20 raw seniority labels standardised to 4 tiers</div>
+    </div>
+    <div class="kpi" style="border-left-color: var(--green)">
+      <h4>Projected Applications / Role</h4>
+      <div class="val" style="color: var(--green)" id="whatif-val">54.0</div>
+      <div class="note" id="whatif-sub">+45.2% uplift at 50% Remote Adoption</div>
+    </div>
+  </div>
+
+  <div class="smart-box">
+    <div class="panel">
+      <h3>&#9733; DAX Smart Narrative &amp; Multi-Condition Integrity Alert</h3>
+      <div class="narrative" id="smart-narrative">
+        <strong>INTEGRITY ENGINE BRIEFING:</strong> Out of <strong>100,000</strong> raw UK job postings ingested, automated anomaly filters quarantined <strong>8,420</strong> corrupted records (3,650 with inverted salary bands where minimum exceeded maximum, 3,450 with closing dates prior to posting dates, and 1,320 with unparseable salary strings or negative experience). Vectorised seniority recalculation consolidated <strong>20 inconsistent labels</strong> and exposed <strong>8,326 postings (9.09%)</strong> exhibiting false-seniority labelling.
+      </div>
+      <div class="alert-pill">&#9888; MULTI-CONDITION KPI ALERT: High Salary Volatility (CV &gt; 0.14) + On-Site Policy reduces conversion by 50.3%</div>
+    </div>
+
+    <div class="panel">
+      <h3>&#9881; "Remote Policy Adoption" What-If Parameter Slider</h3>
+      <div class="narrative">Adjust the percentage of On-Site/Hybrid postings converted to Remote-friendly policies to project applicant volume uplift:</div>
+      <div class="slider-row">
+        <span>0%</span>
+        <input type="range" id="remote-slider" min="0" max="100" step="5" value="50">
+        <span id="slider-pct" style="font-weight:700;color:var(--green)">50%</span>
+      </div>
+      <div id="slider-detail" style="margin-top:10px;font-size:13px;color:var(--muted)">
+        Baseline On-Site Avg: <strong>39.4 apps</strong> | Full Remote Avg: <strong>79.8 apps</strong> (+102.5% max uplift)
+      </div>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="panel"><div id="chart-skills" style="height:420px"></div></div>
+    <div class="panel"><div id="chart-conv" style="height:420px"></div></div>
+  </div>
+
+<script>
+  const skillsData = [{"skill_name": "Python", "skill_category": "Programming & Scripting", "demand_postings_count": 45809, "avg_skill_salary_gbp": 70517.21, "market_salary_premium_gbp": 1084.64, "avg_attractiveness_score": 58.4, "avg_conversion_rate_pct": 11.15, "senior_tier_demand": 19184, "remote_enabled_count": 12822}, {"skill_name": "SQL", "skill_category": "Programming & Scripting", "demand_postings_count": 41806, "avg_skill_salary_gbp": 66466.53, "market_salary_premium_gbp": -2966.04, "avg_attractiveness_score": 58.4, "avg_conversion_rate_pct": 11.15, "senior_tier_demand": 17575, "remote_enabled_count": 11715}, {"skill_name": "Power BI", "skill_category": "BI & Visualisation", "demand_postings_count": 23958, "avg_skill_salary_gbp": 60328.96, "market_salary_premium_gbp": -9103.61, "avg_attractiveness_score": 58.43, "avg_conversion_rate_pct": 11.15, "senior_tier_demand": 10028, "remote_enabled_count": 6780}, {"skill_name": "Statistics", "skill_category": "Analytics & Governance", "demand_postings_count": 17504, "avg_skill_salary_gbp": 62050.04, "market_salary_premium_gbp": -7382.53, "avg_attractiveness_score": 58.38, "avg_conversion_rate_pct": 11.13, "senior_tier_demand": 7319, "remote_enabled_count": 4933}, {"skill_name": "Excel", "skill_category": "BI & Visualisation", "demand_postings_count": 16970, "avg_skill_salary_gbp": 57134.81, "market_salary_premium_gbp": -12297.77, "avg_attractiveness_score": 58.41, "avg_conversion_rate_pct": 11.16, "senior_tier_demand": 7196, "remote_enabled_count": 4745}, {"skill_name": "Tableau", "skill_category": "BI & Visualisation", "demand_postings_count": 14000, "avg_skill_salary_gbp": 55377.69, "market_salary_premium_gbp": -14054.88, "avg_attractiveness_score": 58.45, "avg_conversion_rate_pct": 11.16, "senior_tier_demand": 5864, "remote_enabled_count": 3953}, {"skill_name": "DAX", "skill_category": "BI & Visualisation", "demand_postings_count": 13917, "avg_skill_salary_gbp": 55322.66, "market_salary_premium_gbp": -14109.91, "avg_attractiveness_score": 58.48, "avg_conversion_rate_pct": 11.17, "senior_tier_demand": 5805, "remote_enabled_count": 3953}, {"skill_name": "Power Query", "skill_category": "BI & Visualisation", "demand_postings_count": 13831, "avg_skill_salary_gbp": 55363.35, "market_salary_premium_gbp": -14069.22, "avg_attractiveness_score": 58.42, "avg_conversion_rate_pct": 11.16, "senior_tier_demand": 5840, "remote_enabled_count": 3918}, {"skill_name": "dbt", "skill_category": "Data Transformation & ELT", "demand_postings_count": 12954, "avg_skill_salary_gbp": 74153.29, "market_salary_premium_gbp": 4720.72, "avg_attractiveness_score": 58.33, "avg_conversion_rate_pct": 11.1, "senior_tier_demand": 5318, "remote_enabled_count": 3587}, {"skill_name": "Snowflake", "skill_category": "Cloud Data Warehouse", "demand_postings_count": 12924, "avg_skill_salary_gbp": 74280.27, "market_salary_premium_gbp": 4847.69, "avg_attractiveness_score": 58.41, "avg_conversion_rate_pct": 11.14, "senior_tier_demand": 5326, "remote_enabled_count": 3608}, {"skill_name": "Airflow", "skill_category": "Orchestration & Pipelines", "demand_postings_count": 12798, "avg_skill_salary_gbp": 74200.78, "market_salary_premium_gbp": 4768.21, "avg_attractiveness_score": 58.38, "avg_conversion_rate_pct": 11.12, "senior_tier_demand": 5274, "remote_enabled_count": 3526}, {"skill_name": "Docker", "skill_category": "Cloud & DevOps", "demand_postings_count": 12769, "avg_skill_salary_gbp": 79398.49, "market_salary_premium_gbp": 9965.91, "avg_attractiveness_score": 58.32, "avg_conversion_rate_pct": 11.11, "senior_tier_demand": 5285, "remote_enabled_count": 3519}];
+  const convData = [{"role_family": "Data Governance Specialist", "total_role_postings": 3707, "remote_postings": 1065, "hybrid_postings": 1704, "onsite_postings": 938, "remote_conversion_rate_pct": 15.1, "hybrid_conversion_rate_pct": 10.86, "onsite_conversion_rate_pct": 7.42, "remote_vs_onsite_applicant_uplift": 42.5, "avg_attractiveness_score": 58.56}, {"role_family": "Backend Software Engineer", "total_role_postings": 7232, "remote_postings": 2055, "hybrid_postings": 3347, "onsite_postings": 1830, "remote_conversion_rate_pct": 15.05, "hybrid_conversion_rate_pct": 10.89, "onsite_conversion_rate_pct": 7.47, "remote_vs_onsite_applicant_uplift": 41.6, "avg_attractiveness_score": 58.52}, {"role_family": "Data Analyst", "total_role_postings": 15459, "remote_postings": 4388, "hybrid_postings": 6952, "onsite_postings": 4119, "remote_conversion_rate_pct": 15.08, "hybrid_conversion_rate_pct": 10.87, "onsite_conversion_rate_pct": 7.44, "remote_vs_onsite_applicant_uplift": 41.1, "avg_attractiveness_score": 58.41}, {"role_family": "Analytics Engineer", "total_role_postings": 8248, "remote_postings": 2289, "hybrid_postings": 3837, "onsite_postings": 2122, "remote_conversion_rate_pct": 14.98, "hybrid_conversion_rate_pct": 10.91, "onsite_conversion_rate_pct": 7.46, "remote_vs_onsite_applicant_uplift": 40.9, "avg_attractiveness_score": 58.47}, {"role_family": "Data Engineer", "total_role_postings": 16486, "remote_postings": 4583, "hybrid_postings": 7546, "onsite_postings": 4357, "remote_conversion_rate_pct": 15.02, "hybrid_conversion_rate_pct": 10.87, "onsite_conversion_rate_pct": 7.46, "remote_vs_onsite_applicant_uplift": 40.7, "avg_attractiveness_score": 58.37}, {"role_family": "Cloud Platform Engineer", "total_role_postings": 7376, "remote_postings": 1976, "hybrid_postings": 3396, "onsite_postings": 2004, "remote_conversion_rate_pct": 15.02, "hybrid_conversion_rate_pct": 10.81, "onsite_conversion_rate_pct": 7.42, "remote_vs_onsite_applicant_uplift": 40.1, "avg_attractiveness_score": 58.13}, {"role_family": "Data Scientist", "total_role_postings": 10171, "remote_postings": 2870, "hybrid_postings": 4684, "onsite_postings": 2617, "remote_conversion_rate_pct": 15.04, "hybrid_conversion_rate_pct": 10.89, "onsite_conversion_rate_pct": 7.44, "remote_vs_onsite_applicant_uplift": 40.1, "avg_attractiveness_score": 58.49}, {"role_family": "Machine Learning Engineer", "total_role_postings": 8207, "remote_postings": 2264, "hybrid_postings": 3817, "onsite_postings": 2126, "remote_conversion_rate_pct": 15.06, "hybrid_conversion_rate_pct": 10.92, "onsite_conversion_rate_pct": 7.5, "remote_vs_onsite_applicant_uplift": 40.0, "avg_attractiveness_score": 58.46}, {"role_family": "Financial Risk Analyst", "total_role_postings": 5511, "remote_postings": 1522, "hybrid_postings": 2519, "onsite_postings": 1470, "remote_conversion_rate_pct": 15.04, "hybrid_conversion_rate_pct": 10.92, "onsite_conversion_rate_pct": 7.48, "remote_vs_onsite_applicant_uplift": 39.6, "avg_attractiveness_score": 58.32}, {"role_family": "BI Developer", "total_role_postings": 9183, "remote_postings": 2577, "hybrid_postings": 4273, "onsite_postings": 2333, "remote_conversion_rate_pct": 15.01, "hybrid_conversion_rate_pct": 10.84, "onsite_conversion_rate_pct": 7.46, "remote_vs_onsite_applicant_uplift": 38.0, "avg_attractiveness_score": 58.46}];
+  const onsiteBase = 39.4;
+  const remoteBase = 79.8;
+
+  Plotly.newPlot('chart-skills', [{
+    type: 'bar',
+    orientation: 'h',
+    y: skillsData.map(d => d.skill_name).reverse(),
+    x: skillsData.map(d => d.demand_postings_count).reverse(),
+    marker: { color: '#38bdf8' },
+    text: skillsData.map(d => '£' + Math.round(d.avg_skill_salary_gbp).toLocaleString()).reverse(),
+    textposition: 'auto'
+  }], {
+    title: 'Top 12 UK Technical Skills Demand & Avg Midpoint Salary (£)',
+    paper_bgcolor: '#141f36', plot_bgcolor: '#141f36',
+    font: { color: '#f8fafc' }, margin: { l: 110, r: 20, t: 45, b: 40 }
+  });
+
+  Plotly.newPlot('chart-conv', [
+    { name: 'On-Site', type: 'bar', x: convData.map(d => d.role_family), y: convData.map(d => d.onsite_conversion_rate_pct), marker: { color: '#f43f5e' } },
+    { name: 'Hybrid', type: 'bar', x: convData.map(d => d.role_family), y: convData.map(d => d.hybrid_conversion_rate_pct), marker: { color: '#fbbf24' } },
+    { name: 'Remote', type: 'bar', x: convData.map(d => d.role_family), y: convData.map(d => d.remote_conversion_rate_pct), marker: { color: '#10b981' } }
+  ], {
+    title: 'Applicant Conversion Rate (%) by Work Arrangement & Role',
+    barmode: 'group',
+    paper_bgcolor: '#141f36', plot_bgcolor: '#141f36',
+    font: { color: '#f8fafc' }, margin: { l: 50, r: 20, t: 45, b: 90 }
+  });
+
+  const slider = document.getElementById('remote-slider');
+  const pctEl = document.getElementById('slider-pct');
+  const valEl = document.getElementById('whatif-val');
+  const subEl = document.getElementById('whatif-sub');
+
+  function updateWhatIf() {
+    const pct = Number(slider.value);
+    pctEl.textContent = pct + '%';
+    const proj = onsiteBase + (pct / 100.0) * (remoteBase - onsiteBase);
+    const uplift = ((proj - onsiteBase) / onsiteBase) * 100.0;
+    valEl.textContent = proj.toFixed(1) + ' apps';
+    subEl.textContent = '+' + uplift.toFixed(1) + '% applicant uplift at ' + pct + '% Remote Adoption';
+  }
+  slider.addEventListener('input', updateWhatIf);
+  updateWhatIf();
+</script>
+</body>
+</html>

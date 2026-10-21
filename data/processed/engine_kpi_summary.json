@@ -1,0 +1,19 @@
+{
+  "raw_total_rows": 100000,
+  "clean_analysis_ready_rows": 91580,
+  "quarantined_rows": 8420,
+  "quarantine_breakdown": {
+    "Corrupted/Unparseable Salary or Negative Experience Years": 1320,
+    "Impossible Salary Band: salary_min_gbp > salary_max_gbp": 3650,
+    "Impossible Timeline: closing_date < posting_date": 3450
+  },
+  "distinct_raw_seniority_labels_standardised": 20,
+  "false_seniority_labels_detected": 8326,
+  "false_seniority_rate_pct": 9.09,
+  "avg_uk_salary_midpoint_gbp": 69432.57,
+  "avg_posting_attractiveness_score": 58.41,
+  "avg_role_salary_volatility_cv": 0.1433,
+  "remote_avg_applications": 79.8,
+  "onsite_avg_applications": 39.4,
+  "remote_applicant_uplift_pct": 102.5
+}

@@ -1,0 +1,5 @@
+role_family,raw_seniority_label,recalculated_seniority,mismatched_postings_count,avg_required_exp_years,advertised_avg_salary_gbp,true_tier_market_salary_gbp,wide_salary_band_count
+Data Engineer,Entry-Level,Mid-Level,46,3.4,67691.85,69771.91,0
+Data Engineer,Lead / Principal,Mid-Level,44,3.4,69463.55,69771.91,0
+Data Analyst,Trainee / Assoc,Mid-Level,42,3.4,47934.68,49335.94,0
+Data Engineer,Trainee / Assoc,Senior,41,6.7,89454.38,88433.57,0

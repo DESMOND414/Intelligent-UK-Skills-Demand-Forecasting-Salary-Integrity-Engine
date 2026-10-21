@@ -1,0 +1,101 @@
+// =============================================================================
+// Intelligent UK Skills Demand Forecasting & Salary Integrity Engine
+// Power BI DAX Measures: Smart Narrative, Multi-Condition KPI Alerts & What-If Slider
+// =============================================================================
+
+// 1. Core Volume & Quarantine Integrity Metrics
+Verified Postings Count = 
+COUNTROWS('job_postings_clean')
+
+Quarantined Postings Count = 
+COUNTROWS('job_postings_quarantine')
+
+Data Integrity Pass Rate (%) = 
+DIVIDE(
+    [Verified Postings Count],
+    [Verified Postings Count] + [Quarantined Postings Count],
+    0
+) * 100
+
+False Seniority Postings Count = 
+CALCULATE(
+    COUNTROWS('job_postings_clean'),
+    'job_postings_clean'[is_false_seniority_label] = 1
+)
+
+False Seniority Labelling Rate (%) = 
+DIVIDE([False Seniority Postings Count], [Verified Postings Count], 0) * 100
+
+// 2. Salary Benchmarking, Volatility & Attractiveness Measures
+Avg Salary Midpoint (£) = 
+AVERAGE('job_postings_clean'[salary_midpoint_gbp])
+
+Avg Role Salary Volatility Index (CV) = 
+AVERAGE('job_postings_clean'[role_salary_volatility_cv])
+
+Avg Posting Attractiveness Score = 
+AVERAGE('job_postings_clean'[posting_attractiveness_score])
+
+Avg Applicant Conversion Rate (%) = 
+AVERAGE('job_postings_clean'[conversion_rate_pct])
+
+// 3. "Remote Policy Adoption" What-If Parameter & Applicant Uplift Measures
+// Parameter Table created via: RemoteAdoptionParameter = GENERATESERIES(0, 1.0, 0.05)
+Remote Policy Adoption Value = 
+SELECTEDVALUE('RemoteAdoptionParameter'[Remote Policy Adoption], 0.50)
+
+Baseline On-Site Avg Applications = 
+CALCULATE(
+    AVERAGE('job_postings_clean'[applications_count]),
+    'job_postings_clean'[work_arrangement] = "On-Site"
+)
+
+Baseline Remote Avg Applications = 
+CALCULATE(
+    AVERAGE('job_postings_clean'[applications_count]),
+    'job_postings_clean'[work_arrangement] = "Remote"
+)
+
+Projected Applications per Posting (What-If) = 
+VAR AdoptionRate = [Remote Policy Adoption Value]
+VAR OnSiteBase = [Baseline On-Site Avg Applications]
+VAR RemoteBase = [Baseline Remote Avg Applications]
+RETURN
+    OnSiteBase + (AdoptionRate * (RemoteBase - OnSiteBase))
+
+Projected Applicant Uplift (%) = 
+DIVIDE(
+    [Projected Applications per Posting (What-If)] - [Baseline On-Site Avg Applications],
+    [Baseline On-Site Avg Applications],
+    0
+) * 100
+
+// 4. Multi-Condition KPI Alert Measure
+Multi-Condition Salary & Conversion Alert = 
+VAR CurrVolatility = [Avg Role Salary Volatility Index (CV)]
+VAR FalseSenRate = [False Seniority Labelling Rate (%)]
+VAR ConvRate = [Avg Applicant Conversion Rate (%)]
+RETURN
+    SWITCH(
+        TRUE(),
+        CurrVolatility > 0.14 && FalseSenRate > 10.0 && ConvRate < 9.0,
+            "CRITICAL ALERT: High Salary Volatility (CV > 0.14), Elevated False-Seniority Labelling (>10%), and Sub-Benchmark Applicant Conversion (<9%)",
+        CurrVolatility > 0.13 && ConvRate < 10.0,
+            "WARNING: Wide Salary Dispersion Suppressing Candidate Conversion",
+        "HEALTHY: Salary Band Integrity & Conversion Within Target"
+    )
+
+// 5. Plain-English DAX Smart Narrative
+Executive Smart Narrative = 
+VAR CleanRows = FORMAT([Verified Postings Count], "#,##0")
+VAR QuarRows = FORMAT([Quarantined Postings Count], "#,##0")
+VAR AvgSal = FORMAT([Avg Salary Midpoint (£)], "£#,##0")
+VAR UpliftPct = ROUND([Projected Applicant Uplift (%)], 1)
+VAR SliderPct = ROUND([Remote Policy Adoption Value] * 100, 0)
+RETURN
+    "SKILLS & SALARY INTEGRITY BRIEFING: Pipeline validated " & CleanRows & 
+    " UK job postings after quarantining " & QuarRows & 
+    " corrupted records (inverted salary bands and impossible closing dates) and standardising 20 raw seniority labels. " &
+    "Market midpoint salary averages " & AvgSal & 
+    " with a Posting Attractiveness Score of " & ROUND([Avg Posting Attractiveness Score], 1) & "/100. " &
+    "At a " & SliderPct & "% Remote Policy Adoption setting, projected applicant volume increases by +" & UpliftPct & "% per posting."

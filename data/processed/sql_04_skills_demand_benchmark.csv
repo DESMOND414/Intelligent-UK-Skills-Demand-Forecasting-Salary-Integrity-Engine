@@ -1,0 +1,45 @@
+skill_name,skill_category,demand_postings_count,avg_skill_salary_gbp,market_salary_premium_gbp,avg_attractiveness_score,avg_conversion_rate_pct,senior_tier_demand,remote_enabled_count
+Python,Programming & Scripting,45809,70517.21,1084.64,58.4,11.15,19184,12822
+SQL,Programming & Scripting,41806,66466.53,-2966.04,58.4,11.15,17575,11715
+Power BI,BI & Visualisation,23958,60328.96,-9103.61,58.43,11.15,10028,6780
+Statistics,Analytics & Governance,17504,62050.04,-7382.53,58.38,11.13,7319,4933
+Excel,BI & Visualisation,16970,57134.81,-12297.77,58.41,11.16,7196,4745
+Tableau,BI & Visualisation,14000,55377.69,-14054.88,58.45,11.16,5864,3953
+DAX,BI & Visualisation,13917,55322.66,-14109.91,58.48,11.17,5805,3953
+Power Query,BI & Visualisation,13831,55363.35,-14069.22,58.42,11.16,5840,3918
+dbt,Data Transformation & ELT,12954,74153.29,4720.72,58.33,11.1,5318,3587
+Snowflake,Cloud Data Warehouse,12924,74280.27,4847.69,58.41,11.14,5326,3608
+Airflow,Orchestration & Pipelines,12798,74200.78,4768.21,58.38,11.12,5274,3526
+Docker,Cloud & DevOps,12769,79398.49,9965.91,58.32,11.11,5285,3519
+Azure,Cloud & DevOps,12446,77055.76,7623.19,58.24,11.07,5085,3411
+XGBoost,Machine Learning & AI,10336,78912.23,9479.65,58.57,11.2,4338,2912
+PyTorch,Machine Learning & AI,10319,78680.9,9248.33,58.42,11.14,4312,2870
+scikit-learn,Machine Learning & AI,10221,78781.18,9348.6,58.45,11.18,4285,2842
+Kubernetes,Cloud & DevOps,8753,82670.26,13237.68,58.31,11.09,3640,2360
+Kafka,Streaming & Event Driven,8272,76210.67,6778.09,58.34,11.13,3499,2305
+Databricks,Big Data & Lakehouse,8232,76108.55,6675.98,58.46,11.15,3420,2297
+PySpark,Big Data & Lakehouse,8222,76037.01,6604.43,58.41,11.14,3453,2275
+Pandas,Programming & Scripting,5736,73424.5,3991.92,58.52,11.17,2370,1604
+NLP,Machine Learning & AI,5699,73811.26,4378.69,58.52,11.18,2397,1567
+Azure Synapse,Cloud Data Warehouse,5160,57987.84,-11444.74,58.46,11.18,2177,1472
+SSIS,Orchestration & Pipelines,5128,57918.89,-11513.68,58.43,11.13,2086,1434
+Data Modelling,Analytics & Governance,4678,71490.89,2058.32,58.47,11.15,1945,1295
+MLflow,Machine Learning & AI,4646,85401.76,15969.19,58.4,11.17,2001,1273
+Git,Cloud & DevOps,4634,71738.14,2305.57,58.45,11.16,1964,1277
+FastAPI,Backend Engineering,4582,85587.45,16154.88,58.55,11.22,1993,1278
+CI/CD,Cloud & DevOps,4177,79821.59,10389.02,58.1,11.03,1688,1114
+AWS,Cloud & DevOps,4166,79565.72,10133.15,58.05,10.98,1658,1110
+Linux,Cloud & DevOps,4149,80081.98,10649.4,58.18,11.03,1706,1120
+PostgreSQL,Cloud Data Warehouse,4143,72759.18,3326.61,58.55,11.21,1729,1180
+REST APIs,Backend Engineering,4124,72834.16,3401.59,58.59,11.24,1740,1187
+Terraform,Cloud & DevOps,4102,79642.8,10210.23,58.18,11.05,1664,1116
+Java,Programming & Scripting,4098,72816.12,3383.55,58.52,11.2,1741,1168
+Spring Boot,Backend Engineering,4031,72794.89,3362.32,58.54,11.21,1691,1148
+Microservices,Backend Engineering,4030,72635.16,3202.58,58.5,11.21,1682,1158
+Credit Analytics,Analytics & Governance,3130,64906.9,-4525.67,58.31,11.13,1306,855
+Risk Modelling,Analytics & Governance,3091,64636.78,-4795.79,58.25,11.12,1262,870
+SAS,Analytics & Governance,3033,65034.87,-4397.7,58.36,11.15,1289,833
+GDPR,Analytics & Governance,2427,62481.91,-6950.66,58.59,11.24,1013,695
+Metadata Management,Analytics & Governance,2384,62443.64,-6988.94,58.62,11.23,981,683
+Data Quality,Analytics & Governance,2378,62518.88,-6913.69,58.56,11.22,991,686
+Unity Catalog,Analytics & Governance,2340,62283.22,-7149.35,58.59,11.25,983,678
