@@ -5,6 +5,34 @@
 
 ---
 
+## About the Project
+
+**Intelligent UK Skills Demand Forecasting & Salary Integrity Engine** is an end-to-end data engineering, SQL analytics, and business intelligence project built to tackle real-world labour market data quality issues and deliver actionable recruitment and compensation insights across the UK tech job market.
+
+Job board datasets are notoriously messy—mixing inconsistent date formats, unstandardised currency strings, inverted salary bands, impossible application timelines, and inflated or misleading seniority titles. This project automates the full ingestion, cleansing, anomaly quarantine, and analytical modelling lifecycle, transforming raw postings into a governed SQL schema and an interactive Power BI decision engine for skills demand forecasting, pay-equity auditing, and remote-work policy simulation.
+
+---
+
+## Project Details
+
+- **Domain:** UK Labour Market Analytics, Data Quality Engineering & Workforce Intelligence
+- **Dataset & Pipeline Scale:**
+  - **100,000** deliberately unclean UK job postings ingested across **5 mixed date formats** and **20 inconsistent seniority labels**
+  - **8,420** corrupted/impossible records (**8.42%**) automatically isolated into `job_postings_quarantine`
+  - **91,580** clean, analysis-ready postings (**91.58%**) loaded into `job_postings_clean`
+  - **412,107** normalised job-skill mappings spanning **44 unique technical skills** in `posting_skills`
+- **Core Capabilities:**
+  - **Automated Data Cleansing & Quarantine (Python):** Multi-pass date normalisation, `£` salary string parsing (including `k` shorthand expansion), and vectorised quarantine of inverted salary bands, impossible timelines, and invalid records.
+  - **Seniority Recalculation & Integrity Auditing:** Maps 20 raw titles into 4 canonical tiers (`Junior`, `Mid-Level`, `Senior`, `Lead / Principal`) based on `experience_years`, flagging **8,326 (9.09%)** false-seniority postings and computing Role Salary Volatility ($CV$) and Posting Attractiveness Scores (0–100).
+  - **Constraint-Driven SQL Analytics:** All analytical queries built using correlated subqueries, conditional aggregation, and `HAVING` clauses (strictly without CTEs or window functions).
+  - **Executive BI & What-If Simulation:** Power BI model (`Power Query M` + `DAX`) featuring a dynamic **DAX Smart Narrative**, **Multi-Condition KPI Alerts**, and a **Remote Policy Adoption What-If Slider** projecting up to **+102.5% applicant uplift**.
+- **Tech Stack:**
+  - **Database & Querying:** MySQL / SQLAlchemy (with local SQLite mirror support)
+  - **ETL & Feature Engineering:** Python (`Pandas`, `NumPy`, `SQLAlchemy`)
+  - **Visualisation & BI:** Power BI (`Power Query`, `DAX`), Plotly, Matplotlib/Seaborn
+
+---
+
 ## Executive Objective
 
 To build an automated Python-to-SQL-to-Power BI pipeline that cleans **100,000 deliberately unclean UK job postings**, standardises **five mixed date formats** and messy **‘£’ salary strings**, quarantines **impossible records**, recalculates seniority tiers from experience years, and delivers **skills-demand forecasting**, **salary-integrity auditing**, and **remote-work applicant uplift** insights.
